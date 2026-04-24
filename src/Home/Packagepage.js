@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Typography,
-  Card,
-  CardMedia,
-  CardContent,
-  Button,
-  Grid,
-  FormControl,
-  Select,
-  MenuItem,
-} from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 import { useNavigate } from "react-router-dom";
 
 import hiking from "../Images/hiking.jpeg";
@@ -115,77 +113,86 @@ function Package() {
   const [selectedCategory, setSelectedCategory] =
     useState("All Categories");
 
+  const filteredPackages = packages.filter((pkg) =>
+    selectedCategory === "All Categories"
+      ? true
+      : pkg.category === selectedCategory
+  );
+
   return (
     <Box
       sx={{
         backgroundColor: "#f5f9fb",
         py: 8,
-        px: { xs: 2, md: 6 },
+        px: { xs: 2, sm: 3, md: 6 },
         width: "100%",
+        overflowX: "hidden",
+        boxSizing: "border-box",
       }}
     >
-      <Typography
-        variant="h3"
-        sx={{
-          textAlign: "center",
-          fontWeight: "bold",
-          mb: 6,
-          fontSize: { xs: "2rem", md: "3rem" },
-        }}
-      >
-        Travel Packages
-      </Typography>
-
       <Box
         sx={{
-          display: "flex",
-          justifyContent: "center",
-          mb: 6,
+          maxWidth: "1400px",
+          margin: "0 auto",
+          width: "100%",
         }}
       >
-        <FormControl
+        <Typography
+          variant="h3"
           sx={{
-            width: {
-              xs: "90%",
-              sm: "350px",
-            },
+            textAlign: "center",
+            fontWeight: "bold",
+            mb: 6,
+            fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
           }}
         >
-          <Select
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
+          Travel Packages
+        </Typography>
+
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            mb: 6,
+          }}
+        >
+          <FormControl
             sx={{
-              borderRadius: "15px",
-              backgroundColor: "white",
-              fontWeight: "bold",
+              width: {
+                xs: "100%",
+                sm: "350px",
+              },
             }}
           >
-            {categories.map((category) => (
-              <MenuItem key={category} value={category}>
-                {category}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </Box>
+            <Select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              sx={{
+                borderRadius: "15px",
+                backgroundColor: "white",
+                fontWeight: "bold",
+              }}
+            >
+              {categories.map((category) => (
+                <MenuItem key={category} value={category}>
+                  {category}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Box>
 
-      <Grid
-        container
-        spacing={4}
-        justifyContent="center"
-        alignItems="stretch"
-        sx={{
-          width: "100%",
-          margin: "0 auto",
-        }}
-      >
-        {packages
-          .filter((pkg) =>
-            selectedCategory === "All Categories"
-              ? true
-              : pkg.category === selectedCategory
-          )
-          .map((pkg, index) => (
+        <Grid
+          container
+          spacing={3}
+          justifyContent="center"
+          alignItems="stretch"
+          sx={{
+            width: "100%",
+            margin: 0,
+          }}
+        >
+          {filteredPackages.map((pkg, index) => (
             <Grid
               item
               xs={12}
@@ -193,19 +200,16 @@ function Package() {
               md={4}
               lg={3}
               key={index}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-              }}
+              display="flex"
+              justifyContent="center"
             >
               <Card
                 sx={{
                   width: {
-                    xs: "90%",
-                    sm: "270px",
-                    md: "300px",
+                    xs: "100%",
+                    sm: "320px",
                   },
-                  mx: "auto",
+                  maxWidth: "320px",
                   minHeight: "520px",
                   display: "flex",
                   flexDirection: "column",
@@ -273,6 +277,9 @@ function Package() {
                       py: 1.2,
                       fontWeight: "bold",
                       textTransform: "none",
+                      "&:hover": {
+                        backgroundColor: "#0666d6",
+                      },
                     }}
                   >
                     Know More
@@ -281,7 +288,8 @@ function Package() {
               </Card>
             </Grid>
           ))}
-      </Grid>
+        </Grid>
+      </Box>
     </Box>
   );
 }
