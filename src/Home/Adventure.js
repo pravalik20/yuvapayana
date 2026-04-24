@@ -65,35 +65,34 @@ const sliderSettings = {
   slidesToShow: 4,
   slidesToScroll: 1,
   pauseOnHover: true,
-  centerMode: false, // Changed to false for better mobile control
-  
+
   responsive: [
-  {
-    breakpoint: 1200,
-    settings: {
-      slidesToShow: 1,
-      slidesToScroll: 1,
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
     },
-  },
-  {
-    breakpoint: 900,
-    settings: {
-      slidesToShow: 1,
-      slidesToScroll: 1,
+    {
+      breakpoint: 900,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
     },
-  },
-  {
-    breakpoint: 768,
-    settings: {
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: true,
-      dots: true,
-      centerMode: false,
-      centerPadding: "0px",
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        centerMode: false,
+        variableWidth: false,
+      },
     },
-  },
-],
+  ],
 };
 
 const Activities = () => {
@@ -223,31 +222,21 @@ const Activities = () => {
               }}
             >
               <Card
-                sx={{
-                  width: "100%", // Let it fill the container
-                  maxWidth: {
-                    xs: "280px", // Smaller width on mobile
-                    sm: "320px",
-                    md: "340px",
-                  },
-                  height: "auto",
-                  minHeight: {
-                    xs: "380px", // Ensure consistent height on mobile
-                    sm: "400px",
-                  },
-                  borderRadius: "24px",
-                  overflow: "hidden",
-                  backgroundColor: "#fff",
-                  boxShadow: "0 12px 30px rgba(0,0,0,0.15)",
-                  display: "flex",
-                  flexDirection: "column",
-                  margin: "0 auto",
-                  transition: "transform 0.3s ease",
-                  '&:hover': {
-                    transform: "translateY(-5px)",
-                  },
-                }}
-              >
+  sx={{
+    width: {
+      xs: "85vw",
+      sm: "320px",
+      md: "340px",
+    },
+    borderRadius: "24px",
+    overflow: "hidden",
+    backgroundColor: "#fff",
+    boxShadow: "0 12px 30px rgba(0,0,0,0.15)",
+    display: "flex",
+    flexDirection: "column",
+    margin: "0 auto",
+  }}
+>
                 <CardMedia
                   component="img"
                   image={activity.image}
