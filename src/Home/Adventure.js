@@ -102,27 +102,25 @@ const Activities = () => {
     }
 
     .slick-list {
-      overflow: hidden !important;
-      margin: 0 -8px !important; /* Negative margin to compensate for card padding */
-    }
+  overflow: hidden !important;
+}
 
-    .slick-track {
-      display: flex !important;
-      align-items: stretch !important;
-    }
+.slick-track {
+  display: flex !important;
+}
 
     .slick-slide {
-      display: flex !important;
-      justify-content: center;
-      height: auto;
-      padding: 0 8px !important; /* Add horizontal padding between slides */
-    }
+  display: flex !important;
+  justify-content: center;
+  height: auto;
+  padding: 0 !important;
+}
 
-    .slick-slide > div {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-    }
+.slick-slide > div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
     .slick-prev,
     .slick-next {
@@ -221,13 +219,14 @@ const Activities = () => {
                 height: "100%",
               }}
             >
-              <Card
+             <Card
   sx={{
     width: {
-      xs: "85vw",
+      xs: "260px",
       sm: "320px",
       md: "340px",
     },
+    maxWidth: "340px",
     borderRadius: "24px",
     overflow: "hidden",
     backgroundColor: "#fff",
