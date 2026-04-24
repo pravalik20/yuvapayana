@@ -62,37 +62,38 @@ const sliderSettings = {
   autoplay: false,
   speed: 800,
   arrows: true,
+  slidesToShow: 4,
   slidesToScroll: 1,
   pauseOnHover: true,
   centerMode: false, // Changed to false for better mobile control
   
   responsive: [
-    {
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-      },
+  {
+    breakpoint: 1200,
+    settings: {
+      slidesToShow: 3,
+      slidesToScroll: 1,
     },
-    {
-      breakpoint: 900,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-      },
+  },
+  {
+    breakpoint: 900,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 1,
     },
-    {
-      breakpoint: 600, // Changed from 768 to 600 for better mobile breakpoint
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        dots: true,
-        centerMode: false,
-        centerPadding: "0px", // Important for mobile
-      },
+  },
+  {
+    breakpoint: 768,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: true,
+      centerMode: false,
+      centerPadding: "0px",
     },
-  ],
+  },
+],
 };
 
 const Activities = () => {
