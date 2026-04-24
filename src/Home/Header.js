@@ -28,14 +28,16 @@ import logo from "../Images/logo.jpg";
 /* ================= STYLES ================= */
 
 const HeaderContainer = styled(AppBar)(({ theme }) => ({
-  background: "transparent",
-  boxShadow: "none",
+  background: "rgba(0, 0, 0, 0.75)",
+  backdropFilter: "blur(10px)",
+  boxShadow: "0 2px 10px rgba(0,0,0,0.2)",
   position: "fixed",
   top: 0,
   left: 0,
   width: "100%",
   zIndex: 999,
   padding: "10px 20px",
+  transition: "all 0.3s ease",
 
   [theme.breakpoints.down("sm")]: {
     padding: "10px 12px",
@@ -145,6 +147,11 @@ const Header = () => {
       id: "destinations",
     },
     {
+      label: "Package",
+      icon: <LocationOn fontSize="small" />,
+      id: "packages",
+    },
+    {
       label: "Adventures",
       icon: <Hiking fontSize="small" />,
       id: "adventures",
@@ -170,9 +177,15 @@ const Header = () => {
     const section = document.getElementById(id);
 
     if (section) {
-      section.scrollIntoView({
+      const yOffset = -80;
+      const y =
+        section.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
+
+      window.scrollTo({
+        top: y,
         behavior: "smooth",
-        block: "start",
       });
     }
 
@@ -248,9 +261,6 @@ const Header = () => {
                 fontWeight: 700,
                 whiteSpace: "nowrap",
                 fontSize: "15px",
-                display: "flex",
-                alignItems: "center",
-                lineHeight: 1,
               }}
             >
               +91 7090037535

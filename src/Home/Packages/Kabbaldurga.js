@@ -5,9 +5,9 @@ import image from "../../Images/coorg.jpeg";
 function Kabbaldurga() {
   return (
     <PackageTemplate
-      title="Wayanad Trip"
+      title="KabbalDurga "
       image={image}
-      duration="2 Days 1 Night"
+      duration="1 Day"
       status="Filling Fast"
       transportPrice="₹999"
       withoutTransport="₹599"

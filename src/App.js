@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./Home/Combine";
 import Destination from "./Home/Destination ";
+import Packagepage from "./Home/Packagepage";
 import Adventure from "./Home/Adventure";
 import About from "./Home/About";
 import Footer from "./Home/Footer";
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Destinations" element={<Destination />} />
+        <Route path="/Packagepage" element={<Packagepage />} />
         <Route path="/adventures" element={<Adventure />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Footer />} />

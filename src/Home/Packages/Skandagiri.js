@@ -2,18 +2,18 @@ import React from "react";
 import PackageTemplate from "./Packagetemplets";
 import image from "../../Images/coorg.jpeg";
 
-function Wayanad() {
+function Skandagiri() {
   return (
     <PackageTemplate
       title="Wayanad Trip"
       image={image}
-      duration="2 Days 1 Night"
+      duration="1 Day"
       status="Filling Fast"
-      transportPrice="₹4999"
-      withoutTransport="₹2999"
-      bookingAmount="₹2500"
+      transportPrice="₹999"
+      withoutTransport="₹599"
+      bookingAmount="₹400"
     />
   );
 }
 
-export default Wayanad;
+export default Skandagiri;
