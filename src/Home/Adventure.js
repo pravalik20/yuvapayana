@@ -62,7 +62,6 @@ const sliderSettings = {
   autoplay: false,
   speed: 800,
   arrows: true,
-  slidesToShow: 4,
   slidesToScroll: 1,
   pauseOnHover: true,
   centerMode: false, // Changed to false for better mobile control
