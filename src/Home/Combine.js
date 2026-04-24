@@ -10,6 +10,7 @@ import Adventure from "./Adventure";
 import Ratings from "./Ratings";
 import Footer from "./Footer";
 import { Grid } from "@mui/material";
+import Packagepage from "./Packagepage";
 
 function Home() {
   return (
@@ -26,6 +27,11 @@ function Home() {
 
       
 <Demo />
+
+<div id="packages">
+  <Packagepage />
+</div>
+
       <div id="adventures">
         <Adventure />
       </div>
